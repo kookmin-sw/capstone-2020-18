@@ -10,37 +10,37 @@
 2. 소개 영상
 
 3. 팀 소개
-<img src="C:\Users\82106\Desktop\k0.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k0.jpg" width="200px" height="200px">
 <pre>
 email : sanghwan@kookmin.ac.kr
 role : 지도교수
 </pre>
-<img src="C:\Users\82106\Desktop\k1.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k1.jpg" width="200px" height="200px">
 <pre>
 email : lucia3736@kookmin.ac.kr
 role : 팀장, Front-End
 </pre>
-<img src="C:\Users\82106\Desktop\k2.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k2.png" width="200px" height="200px">
 <pre>
 email : good7219@hotmail.com
 role : Server Api 제작 및 환경관리
 </pre>
-<img src="C:\Users\82106\Desktop\k3.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k3.jpg" width="200px" height="200px">
 <pre>
 email : skeowlakffo@gmail.com
 role : Back-End
 </pre>
-<img src="C:\Users\82106\Desktop\k4_2.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k4_2.jpg" width="200px" height="200px">
 <pre>
 email : si31@kookmin.ac.kr
 role : Front-End
 </pre>
-<img src="C:\Users\82106\Desktop\k5.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/master/image/k5.jpg" width="200px" height="200px">
 <pre>
 email : wwoss2012@gmail.com
 role : Front, Back-End
 </pre>
-<img src="C:\Users\82106\Desktop\k6.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k6.jpg" width="200px" height="200px">
 <pre>
 email : surevunk@gmail.com
 role : Server Api 제작 및 환경관리
