@@ -20,7 +20,7 @@ role : 지도교수
 email : lucia3736@kookmin.ac.kr
 role : 팀장, Front-End
 </pre>
-<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k2.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k2.png" width="200px" height="200px">
 <pre>
 email : good7219@hotmail.com
 role : Server Api 제작 및 환경관리
