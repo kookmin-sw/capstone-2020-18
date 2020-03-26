@@ -1,5 +1,5 @@
-<h1>잊지 말아조</h1>
-<img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/img.png" width="400px" height="550px">
+<h1>Never Forget(잊지 말아조)</h1>
+<img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/img.png" width="400px" height="480px">
 1. 프로잭트 개요
 
  헤르만 에빙하우스의 망각 곡선 가설에 의하면 학습은 시간이 지남에 따라 손실되는 정도가 커진다. 거의 모든 사람들이 새로운 지식을 의식적으로 반복적인 학습을 하지 않으면 잊어버리게 된다. 
@@ -11,6 +11,7 @@
 Hermann Ebinghouse's oblivious curve hypothesis suggests that learning is more likely to be lost over time. Almost everyone forgets new knowledge unless they consciously repeat it.
 This project is the development of a self-management learning-only web application using the characteristics of these people.
 When a user learns new knowledge, the purpose is to present and execute a dedicated learning scheduler for the corresponding mastery iteration, and to supplement the knowledge learned as much as possible along the forgetting curve by recommending related academic material and video lectures for that knowledge in accordance with the learner's progress.
+
 3. 소개 영상
 
 4. 팀 소개
