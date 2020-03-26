@@ -35,7 +35,7 @@ role : Back-End
 email : si31@kookmin.ac.kr
 role : Front-End
 </pre>
-<img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k5.jpg" width="200px" height="200px">
+<img src="https://github.com/wwoss3650/capstone-2020-18/blob/master/image/k5.jpg" width="200px" height="200px">
 <pre>
 email : wwoss2012@gmail.com
 role : Front, Back-End
