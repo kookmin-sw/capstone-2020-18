@@ -1,5 +1,5 @@
 <h1>Never Forget(잊지 말아조)</h1>
----
+
 <p align="center">
 <img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/img.png" width="400px" height="440px">
 </p>
@@ -61,5 +61,3 @@ role : Server Api 제작 및 환경관리
 
 ### **5. 기타**
 추가예정
-
-<br/><br/>
