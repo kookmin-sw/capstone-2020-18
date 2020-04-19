@@ -1,25 +1,27 @@
-# Feature : Updpate Study Plan in Today's ToDoList
+# Feature : 투두리스트의 공부 계획을 수정한다
 
-As an User
-I want to update my study plan in ToDoList for today
-So that I can update my study plan in ToDoList for today
+As 유저로써
 
-Scenario : study plan is updated to new one.
-    Given updated study plan
-    When it is updated
-    then study plan what you want to change is updated.
+I 입력된 공부 계획을 수정하길 원한다.
 
-Scenario : study plan is rejected to update with less than 5 length words
-    Given value length less than 5
-    When it is updated
-    then notify to need to fit the requirement that value length need to be from 5 to 50
+So that 그래서 이전에 투두리스트에 입력된 공부계획을 수정할 수 있다.
 
-Scenario : study plan is rejected to update with more than 50 length words
-    Given value length less than 5
-    When it is updated
-    then notify to need to fit the requirement that value length need to be from 5 to 50
+Scenario : 공부계획이 새로운 내용으로 수정된다.
+    Given 변경할 공부계획과 변경할 공부계획 내용이 주어지고
+    When 그것이 변경될 때
+    then 변경하려고 한 공부 계획 내용이 변경된다.
 
-Scenario : failed to update study plan because of invalid study plan
-    Given invalid study plan number
-    When it is updated
-    then nothing happen.
+Scenario : 변경 하기 위해 입력된 공부 계획 내용이 5자 미만이면 변경이 실패된다.
+    given : 변경할 공부계획과 변경할 입력값이 5자 미만의 공부계획이 입력되고
+    When 변경 처리할 때
+    then 입력한 공부 계획 내용이 5자 이상 50자 미만이 되야한다고 알린다.
+
+Scenario : 변경하기 위해 입력된 공부 계획 내용이 50자를 초과한 공부계획 내용이 주어진다면 입력하는 것이 실패된다.
+    given 변경할 공부계획과 변경할 입력값이 5자를 초과한 공부계획이 입력되고
+    When 변경 처리할 때
+    then 공부 계획 내용이 5자 이상 50자 미만이 되야한다고 알린다.
+
+Scenario : 존재하지 않는 공부 계획을 변경하려고 할 때 실패한다.
+    Given 존재하지 않는 공부 계획과 변경할 공부계획이 입력되고
+    When 변경 처리할 때
+    then 존재하지 않는 공부계획이라고 알린다.
