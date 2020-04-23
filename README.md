@@ -19,7 +19,10 @@ When a user learns new knowledge, the purpose is to present and execute a dedica
 ### **3. 소개 영상**
 https://www.youtube.com/watch?v=RMeJnt3eJRo
 
-### **4. 팀 소개**
+### **4. 중간 발표영상**
+https://youtu.be/d13QMALY0nc
+
+### **5. 팀 소개**
 <img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/k0.jpg" width="200px" height="200px">
 <pre>
 email : sanghwan@kookmin.ac.kr
