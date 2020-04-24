@@ -1,0 +1,19 @@
+
+spring:
+  datasource:
+    url: jdbc:h2:~/data/cat-toys
+  jpa:
+    hibernate:
+      ddl-auto: update
+---
+
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:h2:mem:test
+
+
+
+---
+spring:
+  profiles:
