@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/plans")
 public class PlanController {
@@ -17,25 +19,41 @@ public class PlanController {
     Mapper mapper;
 
     @GetMapping("todolist")
-    public String todayPlans() {
-        return "{\"id\" : \"1\" ,\"content\":\"아침식사\", \"deleted\":false, \"createdDate\":\"2019-12-14T06:34:20\",\"lastModifiedDate\":\"2019-12-14T06:34:20\"}";
+    public List<Plan> todayPlans() throws Exception {
+        return planService.getToDoList();
+    }
+
+    @GetMapping("completedlist")
+    public List<Plan> completedList() throws Exception {
+        return planService.getCompletedPlans();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody PlanDto planDto) {
         Plan plan = mapper.map(planDto, Plan.class);
-        planService.addPlan(plan);
+        try {
+            planService.addPlan(plan);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    @PatchMapping("{id}")
-    public void updatePlan(@PathVariable Long id, @RequestBody PlanDto planDto) {
+    @PatchMapping("/{id}")
+    public void updatePlan(@PathVariable Long id, @RequestBody PlanDto planDto) throws Exception {
         Plan plan = mapper.map(planDto, Plan.class);
+        System.out.println(id);
         planService.updatePlan(id, plan);
     }
 
-    @DeleteMapping("{id}")
-    public void deletePlan(@PathVariable Long id) {
+    @DeleteMapping("/{id}")
+    public void deletePlan(@PathVariable Long id) throws Exception {
         planService.deletePlan(id);
     }
+
+    @PostMapping("/complete/{id}")
+    public void completePlan(@PathVariable Long id) throws Exception {
+        planService.completePlan(id);
+    }
+
 }
