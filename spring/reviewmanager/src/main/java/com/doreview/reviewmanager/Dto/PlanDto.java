@@ -10,25 +10,27 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PlanDto {
+public class PlanDto{
 
-    @Mapping("id")
+    @Mapping("plan_id")
     private Long id;
 
     @NotBlank
     @Mapping("content")
     private String content;
 
-    @NotBlank
-    @Mapping("deleted")
-    private boolean deleted;
+    @Mapping("isdeleted")
+    private boolean isdeleted;
 
-    @NotBlank
-    @Mapping("createdDate")
-    private  LocalDateTime createdDate;
+    @Mapping("regdate")
+    private  LocalDateTime regdate;
 
-    @NotBlank
-    @Mapping("lastModifiedDate")
-    private LocalDateTime lastModifiedDate;
+    @Mapping("lastmodifieddate")
+    private LocalDateTime lastmodifieddate;
 
+    @Mapping("studycount")
+    private int studyCount;
+
+    @Mapping("lateststudydate")
+    private  LocalDateTime lateststudydate;
 }

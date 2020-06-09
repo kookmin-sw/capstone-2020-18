@@ -5,40 +5,63 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDateTime;
-
-@Entity
+import java.util.Objects;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Plan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Getter
+    private Long plan_id;
 
     @Getter
     private String content;
 
     @Getter
-    private final LocalDateTime createdDate = LocalDateTime.now();
+    private final LocalDateTime regdate = LocalDateTime.now();
 
     @Getter
-    private LocalDateTime lastModifiedDate = createdDate;
+    private LocalDateTime lastmodifieddate;
 
     @Getter
-    private boolean deleted;
+    private LocalDateTime lateststudydate;
 
-    public void update(Plan plan) {
-        content = plan.getContent();
-        lastModifiedDate = LocalDateTime.now();
+    @Getter
+    private boolean isdeleted;
+
+    @Getter
+    private int studycount;
+
+    public void update(String content) {
+        this.content = content;
+        this.lastmodifieddate = LocalDateTime.now();
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(plan_id, content, regdate, lastmodifieddate, lateststudydate, isdeleted, studycount);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Plan plan = (Plan) obj;
+        if (this.plan_id == plan.plan_id) {
+            return true;
+        }
+        return false;
+    }
 
     public void delete() {
-        this.deleted = true;
+        this.isdeleted = true;
     }
 }

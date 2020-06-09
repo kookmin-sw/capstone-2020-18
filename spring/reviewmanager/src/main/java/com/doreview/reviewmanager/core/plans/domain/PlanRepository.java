@@ -1,13 +1,18 @@
 package com.doreview.reviewmanager.core.plans.domain;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.time.LocalDateTime;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-public interface PlanRepository extends JpaRepository<Plan, Long> {
-    Plan save(Plan plan);
-    Optional<Plan> findById(Long l);
-    List<Plan> findTodayPlans(); //어떤 기준으로 가져올 것인지에 대해서 이건 jpa를 어떻게 사용할지 찾아봐야한다.
+public interface PlanRepository {
+    void insert(String plan) throws Exception;
+    Optional<Plan> findById(Long l) throws SQLException;
+    List<Plan> findTodayPlans() throws Exception;
+    void delete(Long l) throws Exception;
+    List<Plan> getBeingManagedPlan() throws Exception;
+    void update(Long id, String content) throws Exception;
+
+    void completePlan(Long id) throws Exception;
+
+    List<Plan> getCompletedPlans() throws SQLException;
 }
