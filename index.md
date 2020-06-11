@@ -6,7 +6,7 @@
 <p align="center"><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="800px" height="1100px"> </p>
 
 
-
+## &#9995; 홍보영상
 [![Thumbnail2](https://github.com/lucia3736/capstone-2020-18/blob/master/image/thumbnail.jpg)](https://www.youtube.com/watch?v=rDcZ-JnN7Fg)
 
 
