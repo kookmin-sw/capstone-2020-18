@@ -3,7 +3,7 @@
 
 
 ## &#9995; 프로젝트 소개
-<p align="center"><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="600px" height="840px"> </p>
+<p align="center"><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="800px" height="1000px"> </p>
 
 
 <p align="center"><video src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/video.mp4" height="800px" height="600px" controls>
