@@ -3,9 +3,9 @@
 
 
 ## &#9995; 프로젝트 소개
-<br/><img src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/poster.jpg" width="550px" height="800px"> <br/>
+<br/><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="550px" height="800px"> <br/>
 
-<video src="https://github.com/wwoss3650/capstone-2020-18/blob/e16ba340343cc2594da6fb95da4a7d3acfc3d75a/image/video.mp4" width="550px" height="800px">
+<video src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/video.mp4" width="550px" height="800px">
     Never Forget 홍보영상
 </video>
 
@@ -82,7 +82,7 @@
 
 #### 5. **변승훈**
 
-<img src="https://github.com/wwoss3650/capstone-2020-18/blob/master/image/k5.jpg" width="200px" height="200px">
+<img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/k5.jpg" width="200px" height="200px">
 
 &nbsp;&nbsp;&nbsp;&#10000; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Role**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;: &nbsp; Front-End, Back-End
 
