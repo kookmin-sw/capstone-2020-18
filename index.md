@@ -3,12 +3,12 @@
 
 
 ## &#9995; 프로젝트 소개
-<p align="center"><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="800px" height="1000px"> </p>
+<p align="center"><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="800px" height="1100px"> </p>
 
 
-<p align="center"><video src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/video.mp4" height="800px" height="600px" controls>
-    Never Forget 홍보영상
-</video></p>
+
+[![Thumbnail2](https://github.com/lucia3736/capstone-2020-18/blob/master/image/thumbnail.jpg)](https://www.youtube.com/watch?v=rDcZ-JnN7Fg)
+
 
 
 ## &#9995; 프로젝트 개요
