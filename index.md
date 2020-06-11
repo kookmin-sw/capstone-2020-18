@@ -3,9 +3,9 @@
 
 
 ## &#9995; 프로젝트 소개
-<br/><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="550px" height="800px"> <br/>
+<br/><img src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/poster.jpg" width="600px" height="840px"> <br/>
 
-<video src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/video.mp4" width="550px" height="800px">
+<video src="https://github.com/lucia3736/capstone-2020-18/blob/master/image/video.mp4">
     Never Forget 홍보영상
 </video>
 
