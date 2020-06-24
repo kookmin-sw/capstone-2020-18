@@ -1,0 +1,10 @@
+*{margin:0;padding:0}
+.container{position:relative;background:#00b867;}
+.button{cursor:pointer;background:gray;border:1px solid #444444;padding:5px;color:#EEEFFC;display:inline-block;border:1px solid #444444; padding:5px 10px}
+.button:hover{opacity:0.7;}
+.label{font-weight:bold;}
+.box{float:left;width:30%;background:#D6CFCF}
+li{margin:20px 0 0 0;padding: 10px;background:#EEEFFC}
+.header{background:#028227;padding: 10px 50px;color:#EEEFFC;
+    font-size: 34px;padding-left:70px;font-weight:bold}
+.count{font-size:10px;vertical-align:bottom;}

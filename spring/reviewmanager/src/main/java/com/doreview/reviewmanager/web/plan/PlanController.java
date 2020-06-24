@@ -30,30 +30,34 @@ public class PlanController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody PlanDto planDto) {
+    public String create(@RequestBody PlanDto planDto) {
         Plan plan = mapper.map(planDto, Plan.class);
         try {
             planService.addPlan(plan);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return "{\"result\":\"ok\"}";
     }
 
     @PatchMapping("/{id}")
-    public void updatePlan(@PathVariable Long id, @RequestBody PlanDto planDto) throws Exception {
+    public String updatePlan(@PathVariable Long id, @RequestBody PlanDto planDto) throws Exception {
         Plan plan = mapper.map(planDto, Plan.class);
         System.out.println(id);
         planService.updatePlan(id, plan);
+        return "{\"result\":\"ok\"}";
     }
 
     @DeleteMapping("/{id}")
-    public void deletePlan(@PathVariable Long id) throws Exception {
+    public String deletePlan(@PathVariable Long id) throws Exception {
         planService.deletePlan(id);
+        return "{\"result\":\"ok\"}";
     }
 
     @PostMapping("/complete/{id}")
-    public void completePlan(@PathVariable Long id) throws Exception {
+    public String completePlan(@PathVariable Long id) throws Exception {
         planService.completePlan(id);
+        return "{\"result\":\"ok\"}";
     }
 
 }

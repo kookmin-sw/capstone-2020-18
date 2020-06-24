@@ -19,7 +19,8 @@ public class Dao {
     @SneakyThrows
     public Dao() {
         String dbURL="jdbc:mysql://database-2.cvfikrglnrdr.ap-northeast-2.rds.amazonaws.com:3306/planreview?serverTimezone=UTC&characterEncoding=UTF-8";
-
+        String dbID="admin";
+        String dbPassword="qwer1234";
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn=DriverManager.getConnection(dbURL,dbID,dbPassword);
     }
@@ -30,14 +31,15 @@ public class Dao {
         pstmt.executeUpdate();
         stmt = conn.createStatement();
         rs = stmt.executeQuery("SELECT LAST_INSERT_ID();");
-        rs.next();
-        int id = rs.getInt("LAST_INSERT_ID()");
-        System.out.println(id);
-        String SQL2 = "INSERT INTO plan(plan_id,content) values(?,?)";
-        pstmt = conn.prepareStatement(SQL2);
-        pstmt.setInt(1,id);
-        pstmt.setString(2,plan);
-        pstmt.executeUpdate();
+        if(rs.next()){
+            int id = rs.getInt("LAST_INSERT_ID()");
+            System.out.println(id);
+            String SQL2 = "INSERT INTO plan(plan_id,content) values(?,?)";
+            pstmt = conn.prepareStatement(SQL2);
+            pstmt.setInt(1,id);
+            pstmt.setString(2,plan);
+            pstmt.executeUpdate();
+        }
         return 1;
     }
     public boolean existStudyHistory(Long plan_id) throws Exception{
@@ -131,7 +133,7 @@ public class Dao {
     }
 
     public List<Plan> BeingManagedPlans() throws Exception{
-        String SQL = "Select a.plan_id,a.content,a.lastmodifieddate,b.regdate as lateststudydate, ifnull(c.count,0) as studycount from plan as a left join lateststudy as b on a.plan_id = b.plan_id left join (select count(*) as count ,plan_id from (select * from studyhistory  union select * from lateststudy) as t group by plan_id) as c on a.plan_id=c.plan_id where isdeleted = 0 and c.count <= 5 and c.count>=1;";
+        String SQL = "Select a.plan_id,a.content,a.lastmodifieddate,ifnull(b.regdate,\"null\") as lateststudydate, ifnull(c.count,0) as studycount from plan as a left join lateststudy as b on a.plan_id = b.plan_id left join (select count(*) as count ,plan_id from (select * from studyhistory  union select * from lateststudy) as t group by plan_id) as c on a.plan_id=c.plan_id where isdeleted = 0 and c.count <= 5 and c.count>=1;";
         stmt = conn.createStatement();
         rs = stmt.executeQuery(SQL);
         List<Plan> list = new ArrayList();
