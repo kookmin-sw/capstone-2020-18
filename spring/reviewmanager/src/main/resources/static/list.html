@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>타이틀</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+    <div style="height:15%">
+        <div class="header">Never Forget</div>
+    </div>
+    <div style="margin-top:30px">
+        <div class="box" style="margin-left:2%">
+            <div style="padding:10px">
+                <div class="label">새로 학습 할 내용</div>
+                <ul id="todo" style="list-style:none;">
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="box" style="margin-left:3%">
+            <div style="padding:10px">
+                <div class="label">오늘 복습할 내용</div>
+                <ul id="review" style="list-style:none;">
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="box" style="margin:0 3% 0 2%;">
+            <div style="padding:10px">
+                <div class="label">오늘 복습 완료 내용</div>
+				<ul id="complete" style="list-style:none;">
+                    
+                </ul>
+			</div>
+        </div>
+    </div>
+    <div style="position:fixed;left:0;right:0;bottom:0;margin:0 10px">
+        <input id="input" style="display:block;width:100%;font-size:18px;line-height:1.5;" placeholder="새로운 계획을 입력해보세요">
+        <div id="submit" class="button" style="position:absolute;right:0;top:50%;transform:translateY(-50%);">button</div>
+    </div>
+</body>
+
+<script>
+    const domain = "http://13.59.173.13:8080";
+	const setDelBtn = (id) => {
+		const button = document.createElement('div');
+		button.className = 'button';
+		button.innerHTML = 'delete';
+		button.onclick = () => {
+			fetch(`${domain}/api/plans/${id}`, {
+		method:'DELETE'
+	}).then(response=>response.json()).then(({result})=>{
+		if(result == "ok"){
+			location.href=`${domain}/static/list.html`;
+		}else{
+			location.href="error.html";
+		}
+	});
+		}
+		return button;
+	}
+	const setComBtn = (id) => {
+		const button = document.createElement('div');
+		button.className = 'button';
+		button.style.float= 'right';
+		button.innerHTML = 'complete';
+		button.onclick = () => {
+			fetch(`${domain}/api/plans/complete/${id}`, {
+		method:'POST'
+	}).then(response=>response.json()).then(({result})=>{
+		if(result == "ok"){
+			location.href=`${domain}/static/list.html`;
+		}else{
+			location.href="error.html";
+		}
+	});
+		}
+		return button;
+	}
+
+	document.querySelector("#submit").onclick = () => {
+		const input = document.querySelector("#input");
+		fetch(`${domain}/api/plans`, {
+		method:'POST',
+		headers:{
+    'Content-Type': 'application/json'
+  },
+		body:JSON.stringify({
+			content:input.value
+		})
+	}).then(response=>response.json()).then(({result})=>{
+		if(result == "ok"){
+			location.href=`${domain}/static/list.html`;
+			input.value="";
+		}else{
+			location.href="error.html";
+		}
+	});
+	}
+
+
+	const todoEl =  (plan_id, content, studycount)=>{
+		const li = document.createElement('li');
+		const title = document.createElement('div')
+		title.innerHTML=content;
+		const div = document.createElement('div');
+		div.style.marginTop = '10px';
+		div.appendChild(setComBtn(plan_id))
+		div.appendChild(setDelBtn(plan_id))
+		li.appendChild(title);
+		li.appendChild(div);
+		return li;
+	}
+	const reviewEl =  (plan_id, content, studycount)=>{
+		const li = document.createElement('li');
+		const title = document.createElement('div')
+		title.innerHTML=content;
+		const div = document.createElement('div');
+		div.style.marginTop = '10px';
+		div.appendChild(setComBtn(plan_id));
+		div.appendChild(setDelBtn(plan_id));
+		if(studycount>=1 && studycount<=6) {
+			div.appendChild(reviewCount(studycount));
+		}
+		li.appendChild(title);
+		li.appendChild(div);
+		return li;
+	}
+	const competeEl =  (plan_id, content, studycount)=>{
+		const li = document.createElement('li');
+		const title = document.createElement('div')
+		title.innerHTML=content;
+		const div = document.createElement('div');
+		div.style.marginTop = '10px';
+		div.appendChild(setDelBtn(plan_id))
+		if(studycount>=2 && studycount<=6) {
+			div.appendChild(reviewCount(studycount));
+		}
+		li.appendChild(title);
+		li.appendChild(div);
+		return li;
+	}
+
+	const reviewCount = (studycount) => {
+		const div = document.createElement('div');
+		div.style.float= 'right';
+		div.className="count"
+		div.innerHTML = studycount == 1 ? "복습 횟수 : 1" : `복습 횟수 : ${studycount-1}`;
+	
+		return div;
+	}
+	fetch(`${domain}/api/plans/todolist`).then(response=>response.json()).then(json=>{
+	const ul = document.querySelector("#todo");
+	json.forEach(v => {
+		ul.appendChild(todoEl(v.plan_id,v.content,v.studycount));
+	});
+	a();
+	});
+
+	const a = () => fetch(`${domain}/api/reviews`).then(response=>response.json()).then(json=>{
+	const ul = document.querySelector("#review");
+	json.forEach(v => {
+		ul.appendChild(todoEl(v.plan_id,v.content,v.studycount));
+	});
+	b();
+	});
+
+	const b = () =>fetch(`${domain}/api/plans/completedlist`).then(response=>response.json()).then(json=>{
+		console.log(json)
+	const ul = document.querySelector("#complete");
+	json.forEach(v => {
+		ul.appendChild(competeEl(v.plan_id,v.content,v.studycount));
+	});
+	});
+</script>
+</html>
+

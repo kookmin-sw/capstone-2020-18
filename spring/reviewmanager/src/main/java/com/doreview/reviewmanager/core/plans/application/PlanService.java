@@ -4,15 +4,11 @@ import com.doreview.reviewmanager.core.plans.domain.Plan;
 import com.doreview.reviewmanager.core.plans.domain.PlanRepository;
 import com.doreview.reviewmanager.core.plans.domain.Scheduler;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.sql.SQLException;
 import java.util.List;
 
 @Service
-@Transactional
 @AllArgsConstructor
 
 public class PlanService {

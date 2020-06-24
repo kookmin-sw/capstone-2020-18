@@ -5,16 +5,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
 import java.util.Objects;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Plan {
-    @Id
     @Getter
     private Long plan_id;
 
